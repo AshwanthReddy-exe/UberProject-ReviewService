@@ -19,21 +19,22 @@ public class ReviewService implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    /*
-     * System.out.println("********");
-     * Review r = Review
-     * .builder()
-     * .content("Amazing ride")
-     * .rating(5.0)
-     * .build();
-     * System.out.println(r);
-     * reviewRepository.save(r); // sql query here comes
-     * List<Review> reviews = reviewRepository.findAll();
-     * 
-     * for (Review review : reviews) {
-     * System.out.println(review.getContent());
-     * }
-     */
+
+    System.out.println("********");
+    Review r = Review
+        .builder()
+        .content("Amazing ride")
+        .rating(5.0)
+        .build();
+    System.out.println(r);
+    reviewRepository.save(r); // sql query here comes
+    System.out.println(r.getId());
+    List<Review> reviews = reviewRepository.findAll();
+
+    for (Review review : reviews) {
+      System.out.println(review.getContent());
+    }
+
     reviewRepository.deleteById(3L);
   }
 }
